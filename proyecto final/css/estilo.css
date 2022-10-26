@@ -1,0 +1,215 @@
+/*mobile first*/
+*{
+    padding: 0;
+    margin:0;
+}
+
+body{
+    text-align: center;
+    font-family: 'Poppins',sans-serif;
+    font-weight: bolder;
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+}
+
+header{
+    font-size: large;
+    display: grid;
+    justify-content: center;
+}
+
+header, h2{
+    color: rgb(19, 191, 238);
+}
+
+nav ul li{
+    list-style-type: none;
+}
+
+nav ul, .ad, article, aside{
+    color:  rgb(19, 191, 238);
+    border: 3px solid white;
+}
+
+a{
+    color:  rgb(19, 191, 238);
+    text-decoration: none;
+}
+
+footer{
+    padding: 3em;
+    background-color: green
+    margin-top: 1.5em;
+    margin-bottom: 0;
+}
+.leyenda{
+    margin-top: 15px;
+    background-color: white;
+}
+/*declar el área de grilla*/
+
+header{
+    grid-area: header;
+}
+
+.contenido{
+    grid-area: contenido;
+}
+nav{
+    grid-area: nav
+}
+
+aside{
+    grid-area: sidebar;
+}
+
+.ad{
+    grid-area: ad;
+}
+
+.galeria-grid{
+    grid-area: galeria;
+}
+.leyenda-grid{
+    grid-area: leyenda;
+}
+footer{
+    grid-area: footer;
+}
+
+/*empiezo a acomodar área*/
+
+.inicio{
+    background-color: green;
+    margin-bottom: 1.5em;
+    display: grid;
+    gap:20px;
+    grid-template-areas: 
+    "header"
+    "nav"
+    "contenido"
+    "sidebar"
+    "ad"
+    "galeria"
+    "leyenda"
+    "footer";
+}
+
+.padre{
+    background-color: green;
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-rows: 1fr;
+    gap:15px;
+    justify-items:center;
+}
+
+img{
+    width: 300px;
+    height: 250px;
+    border: 8px solid rgb(19, 191, 238);
+    margin-top: 15px;
+}
+
+@media (min-width:500px){
+    .inicio{
+        margin: 0;
+        grid-template-areas: 
+        "header header"
+        "nav nav"
+        "contenido sidebar"
+        "ad ad"
+        "galeria galeria"
+        "footer footer";
+    }
+    nav ul{
+        font-display: flex;
+        justify-content: space-between;
+    }
+    nav ul, .ad, article, aside{
+        border: 3px solid  green;
+    }
+
+    img{
+        width: 350px;
+        height: 300px;
+    }
+
+    footer{
+        margin-top: 0
+    };
+}
+
+@media (min-width:768px){
+    .inicio{
+        background:  green;
+        margin-bottom: 1.5em;
+        grid-template-columns: 1fr 4fr 1fr;
+       
+        grid-template-areas: 
+        "header header header"
+        "nav contenido sidebar"
+        "nav contenido ad"
+        "galeria galeria leyenda"
+        "footer footer footer";
+    }
+    nav ul{
+        flex-direction: column;
+        border:2px solid black;
+    }
+    nav ul, .ad, article, aside{
+        color:#3a3548;
+        border:3px solid black;
+    }
+
+    header, h1, h2, a{
+        color: black;
+    }
+
+    .galeria-grid{
+        background-color: white;
+
+    }
+
+    .padre{
+        background-color: white;
+        display: grid;
+        grid-template-columns: 1fr 1fr 1fr;
+        gap: 15px;
+        margin:3em;
+    }
+
+    img{
+        border: 5px solid black;
+        width: 200px;
+        height: 150px;
+    }
+
+    footer{
+        margin-top: 1.5em;
+        background: black;
+        background: green
+    }
+}
+
+@media(min-width:1024px){
+    body{
+        background-color: green;
+    }
+    .inicio{
+        color:rgb(176,109,17)
+    }
+    .padre{
+        padding: 1.5em;
+        grid-template-columns: 1fr 1fr ;
+        height: auto;
+        margin: 0;
+    }
+
+    img{
+        width: 475px;
+        height: 400px;
+        margin-top: 20px;
+    }
+}
